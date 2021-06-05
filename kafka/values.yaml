@@ -28,6 +28,6 @@ kafka:
   
 topic:
   dlqueue: 
-    name: dl-queue
+    name: demo-queue
     partitions: 50
     replicas: 3
