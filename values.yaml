@@ -1,0 +1,33 @@
+strimzi:
+  enabled: true
+
+kafka:
+  name: kafka
+  kafka:
+    version: 2.8.0
+    replicas: 3
+    listeners:
+      plain:
+        port: 9092
+      tls:
+        port: 9093
+      external:
+        port: 9094
+    storage: 
+      type: jbod
+      volumes:
+        type: persistent-claim
+        size: 100Gi
+        deleteClaim: false
+  zookeeper:
+    replicas: 3
+    storage:
+      type: persistent-claim
+      size: 100Gi
+      deleteClaim: false
+  
+topic:
+  dlqueue: 
+    name: dl-queue
+    partitions: 50
+    replicas: 3
